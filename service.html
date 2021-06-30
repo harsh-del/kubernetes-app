@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Service section</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+   
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+
+  <!-- Favicons -->
+  <link href="assets/img/K8s.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Gp - v4.3.0
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+       
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Service Section</h2>
+          <ol>
+            <li><button type="button" class="btn btn-warning" onclick="showservices()">Show</button></li>
+            <li><button type="button" class="btn btn-danger" onclick="expose_service_form()">Expose</button></li>
+            <li><button type="button" class="btn btn-info" onclick="describe_service_form()">Describe</button></li>
+            <li><button type="button" class="btn btn-dark" onclick="delete_service_form()">delete</button></li>
+          </ol>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Service</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+          <form class="form1">
+            <div class="mb-3" id="service_name" style="display: none;">
+              <label for="exampleInputEmail1" class="form-label">Service Name </label>
+              <input id="serv" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+              <div  id="emailHelp" class="form-text">Enter your complete image name at docker hub  </div>
+            </div>
+            <div class="mb-3" id="type_name" style="display: none;">
+              <label for="exampleInputPassword1" class="form-label">Load Balancer type</label>
+              <input id="ld" type="text" class="form-control" id="exampleInputPassword1" required>
+            </div>
+            <div class="mb-3" id="deployment_name" style="display: none;">
+              <label for="exampleInputPassword1" class="form-label">Enter Deployment name to be exposed</label>
+              <input id="dyp"type="text" class="form-control" id="exampleInputPassword1" required>
+            </div>
+            <div class="mb-3" id="port_no" style="display: none;">
+              <label for="exampleInputPassword1" class="form-label">Enter port no of backened server</label>
+              <input id="pt" type="text" class="form-control" id="exampleInputPassword1" required>
+            </div>
+            <button id="ser1" type="button" class="btn btn-primary" style="display: none;" onclick="expose_service()">Expose</button>
+            <button id="ser2" type="submit" class="btn btn-primary" style="display: none;" onclick="describe_service()">Describe</button>
+            <button id="ser3" type="submit" class="btn btn-primary" style="display: none;" onclick="del_service()">Delete</button>
+          </form>
+
+          <div class="col-lg-8">
+            <pre class="boxed" id="pre1"> Output shown here... </pre>
+          </div>
+          
+          <div class="col-lg-4">
+            <div class="portfolio-description">
+              <h2>Services</h2>
+              <p>
+                An abstract way to expose an application running on a set of Pods as a network service.
+                With Kubernetes you don't need to modify your application to use an unfamiliar service discovery mechanism. Kubernetes gives Pods their own IP addresses and a single DNS name for a set of Pods, and can load-balance across them
+              </p>
+            </div>
+
+            <div class="portfolio-info">
+              <h3>Commands used at backened</h3>
+              <ul>
+                <li><i class="ri-check-double-line"></i>kubectl get svc</li>
+                <li><i class="ri-check-double-line"></i>kubectl expose deployment {deploy_name} --type={type} --port={port_no}</li>
+                <li><i class="ri-check-double-line"></i>kubectl describe services {service_name}</li>
+                <li><i class="ri-check-double-line"></i>kubectl delete service {service_name}</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>K8s<span>.</span></h3>
+
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>K8s</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
+        Designed by <a href="https://www.linkedin.com/in/harsh-goenka-3ba085193/">Harsh Goenka</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/service.js"></script>
+
+</body>
+
+</html>
